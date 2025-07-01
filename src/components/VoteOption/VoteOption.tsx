@@ -1,6 +1,6 @@
-import VoteStats from './VoteStats';
-import Notification from './Notification';
-import type { VoteType, Votes } from '../types/votes';
+import VoteStats from '../VoteStats/VoteStats';
+import Notification from '../Notification/Notification';
+import type { VoteType, Votes } from '../../types/votes';
 import css from './VoteOptions.module.css';
 
 type Props = {
