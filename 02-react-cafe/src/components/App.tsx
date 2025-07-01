@@ -3,7 +3,6 @@ import type { VoteType, Votes } from '../types/votes';
 
 import css from './App.module.css';
 import CafeInfo from './CafeInfo';
-import Notification from './Notification';
 import VoteOptions from './VoteOption';
 
 export default function App() {
