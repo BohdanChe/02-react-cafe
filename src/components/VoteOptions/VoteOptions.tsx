@@ -1,25 +1,17 @@
-import VoteStats from '../VoteStats/VoteStats';
-import Notification from '../Notification/Notification';
-import type { VoteType, Votes } from '../../types/votes';
+import type { VoteType } from '../types/votes';
 import css from './VoteOptions.module.css';
 
-type Props = {
+interface VoteOptionsProps {
   onVote: (type: VoteType) => void;
   onReset: () => void;
   canReset: boolean;
-  votes: Votes;
-  totalVotes: number;
-  positiveRate: number;
-};
+}
 
 export default function VoteOptions({
   onVote,
   onReset,
   canReset,
-  votes,
-  totalVotes,
-  positiveRate,
-}: Props) {
+}: VoteOptionsProps) {
   return (
     <div className={css.voteOptions}>
       <div className={css.container}>
@@ -37,18 +29,6 @@ export default function VoteOptions({
           <button className={`${css.button} ${css.reset}`} onClick={onReset}>
             Reset
           </button>
-        )}
-      </div>
-
-      <div className={css.bottomSection}>
-        {totalVotes === 0 ? (
-          <Notification />
-        ) : (
-          <VoteStats
-            votes={votes}
-            totalVotes={totalVotes}
-            positiveRate={positiveRate}
-          />
         )}
       </div>
     </div>
